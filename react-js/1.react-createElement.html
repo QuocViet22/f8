@@ -1,0 +1,46 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+</head>
+
+<body>
+    <!-- <div id="root"></div> -->
+    <script>
+        // DOM
+        // var h1DOM = document.createElement('h1');
+        // h1DOM.title = "Hello"
+        // h1DOM.className = "Heading"
+        // h1DOM.innerText = "Hello World"
+        // document.body.appendChild(h1DOM);
+
+        var ulDOM = document.createElement('ul');
+        var l1DOM = document.createElement('li');
+        l1DOM.innerText = "Javascript"
+        var l2DOM = document.createElement('li');
+        l2DOM.innerHTML = "ReactJS"
+        ulDOM.appendChild(l1DOM)
+        ulDOM.appendChild(l2DOM)
+        document.body.appendChild(ulDOM)
+
+        // React DOM
+        var h1React = React.createElement('h1', {
+            title: "Hello",
+            className: "Heading",
+        }, 'Hello guys!!!')
+
+        var ulReact = React.createElement(
+            'ul',
+            null,
+            React.createElement('li', null, 'JavaScript'),
+            React.createElement('li', null, 'ReactJS')
+        )
+        console.log(ulReact);
+    </script>
+</body>
+
+</html>

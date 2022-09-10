@@ -1,0 +1,46 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+    <div id="s"></div>
+    <script>
+        // React DOM
+        // var reactDom = React.createElement(
+        //     'div',
+        //     { className: "post-item" },
+        //     React.createElement(
+        //         'h2',
+        //         { title: "Học React tại F8" },
+        //         'Học ReactJS'
+        //     ),
+        //     React.createElement(
+        //         'p',
+        //         null,
+        //         'Học React từ cơ bản đến nâng cao'
+        //     )
+        // )
+        var reactDom = React.createElement(
+            'ul',{},
+            React.createElement('li',{},'Javascript'),
+            React.createElement('li',{},'ReactJS')
+        )
+        // Get root element
+        var root = document.getElementById('root');
+        var root = document.getElementById('s');
+        // Use React-DOM to render UI
+        ReactDOM.render(reactDom, root);
+        ReactDOM.render(reactDom, s);
+        
+    </script>
+</body>
+
+</html>

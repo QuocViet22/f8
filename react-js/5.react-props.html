@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+        // Function Components
+        // function PostItem({
+        //     image,
+        //     h2,
+        //     callback = () => { },
+        // }) {
+        //     return (
+        //         <div class="posts-list">
+        //             <img src={image} alt=""></img>
+        //             <h2 class="post-title">{h2}</h2>
+        //             <p class="post-desc">This is a picture about a tree and sunset</p>
+        //             <p class="post-published">This picture was posted in May</p>
+        //         </div>
+        //     )
+        // }
+        // var element = (
+        //     <div class="wrapper">
+        //         <PostItem image="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" h2="Image - Pixel" />
+        //         <PostItem image="https://png.pngtree.com/illustrations/20190327/ourmid/pngtree-cure-starry-sky-night-sky-star-png-image_38228.jpg" h2="Image - Pixel" />
+        //         <PostItem image="https://png.pngtree.com/illustrations/20190327/ourmid/pngtree-cure-starry-sky-night-sky-star-png-image_38228.jpg" h2="Image - Pixel" />
+        //     </div>
+        // )
+        // // Render react
+        // ReactDOM.render(element, document.getElementById('app'));
+
+        // fetch API 
+        // function getPosts(callback) {
+        //     fetch('https://jsonplaceholder.typicode.com/posts')
+        //         .then(response => response.json())
+        //         .then(callback)
+        //         .catch(function (err) {
+        //             alert("Error!!!!")
+        //         })
+        // }
+
+        // function renderPosts(courses) {
+        //     var element = courses.map(function (course) {
+        //         return (
+        //             <li>
+        //                 <h2>{course.title}</h2>
+        //                 <p>{course.body}</p>
+        //             </li>
+        //         )
+        //     });
+        //     ReactDOM.render(element, document.getElementById('app'));
+        // }
+
+        // function start() {
+        //     getPosts(function (courses) {
+        //         // renderPosts(courses)
+        //         // console.log(courses)
+        //         var element = courses.map(item => (
+        //             <ul>
+        //                 <h2>{item.title}</h2>
+        //                 <p>{item.body}</p>
+        //             </ul>
+        //         ))
+        //         ReactDOM.render(element, document.getElementById('app'));
+        //     })
+        // }
+        // start()
+
+        var courses = [
+            {
+                "userId": 1,
+                "id": 1,
+                "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+                "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+            },
+            {
+                "userId": 1,
+                "id": 2,
+                "title": "qui est esse",
+                "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
+            },
+            {
+                "userId": 1,
+                "id": 3,
+                "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
+                "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
+            },
+            {
+                "userId": 1,
+                "id": 4,
+                "title": "eum et est occaecati",
+                "body": "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
+            },
+            {
+                "userId": 1,
+                "id": 5,
+                "title": "nesciunt quas odio",
+                "body": "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque"
+            },
+            {
+                "userId": 1,
+                "id": 6,
+                "title": "dolorem eum magni eos aperiam quia",
+                "body": "ut aspernatur corporis harum nihil quis provident sequi\nmollitia nobis aliquid molestiae\nperspiciatis et ea nemo ab reprehenderit accusantium quas\nvoluptate dolores velit et doloremque molestiae"
+            },
+            {
+                "userId": 1,
+                "id": 7,
+                "title": "magnam facilis autem",
+                "body": "dolore placeat quibusdam ea quo vitae\nmagni quis enim qui quis quo nemo aut saepe\nquidem repellat excepturi ut quia\nsunt ut sequi eos ea sed quas"
+            }
+        ]
+        // var CourseItem = props => (
+        //     <div>
+        //         <h2>{props.title}</h2>
+        //         <p>{props.body}</p>
+        //     </div>
+        // )
+        var CourseItem = ({ course }) => (
+            <div>
+                <h2>{course.title}</h2>
+                <p>{course.body}</p>
+            </div>
+        )
+        function PostItem() {
+            return (
+                <div id="wrapper">
+                    {courses.map(course => (
+                        <CourseItem
+                            key={course.id}
+                            // title={course.title}
+                            // body={course.body}
+                            course={course}
+                        />
+                    ))}
+                </div>
+            )
+        }
+        ReactDOM.render(<PostItem />, document.getElementById('app'));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script type="text/babel">
+        // Function Components
+        function Header() {
+            return (
+                <div class="posts-list">
+                    <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" alt=""></img>
+                    <h2 class="post-title">Image - Pixel</h2>
+                    <p class="post-desc">This is a picture about a tree and sunset</p>
+                    <p class="post-published">This picture was posted in May</p>
+                </div>
+            )
+        }
+        // Class components
+        // class Content extends React.Component {
+        //     render() {
+        //         return (
+        //             <div class="content">Content</div>
+        //         )
+        //     }
+        // }
+
+        var element = (
+            <div class="wrapper">
+                <Header />
+                <div class="footer">Footer</div>
+            </div>
+        )
+        // Render react
+        ReactDOM.render(element, document.getElementById('app'));
+    </script>
+</body>
+
+</html>
